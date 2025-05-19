@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Housing Price Prediction</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      color: #00ffcc;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .tagline {
+      font-style: italic;
+      font-size: 16px;
+      color: #f9f9f9;
+      margin-top: -10px;
+      margin-bottom: 30px;
+      opacity: 0.85;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #00ffcc;
+      color: #000;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    a.button:hover {
+      background-color: #00ddb3;
+    }
+
+    .signature {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      font-family: 'Brush Script MT', cursive;
+      font-size: 18px;
+      color: #ffffff88;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 8px 16px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(5px);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🏡 Housing Price Prediction</h1>
+    <p>Welcome to the intelligent housing price prediction tool. Enter property details and get an instant estimate based on real-time machine learning analysis.</p>
+    <p class="tagline">“Turning data into decisions, one house at a time.”</p>
+    <a href="{% url 'predict' %}" class="button">Predict House Price</a>
+  </div>
+
+  <div class="signature">Made with ❤️ by Shubham Sharma</div>
+
+</body>
+</html>

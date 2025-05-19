@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Predict House Price</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #1e1e1e;
+      font-family: "Segoe UI", sans-serif;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 40px;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .card h2 {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      color: #f0f0f0;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    input[type="number"] {
+      padding: 12px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #ffffff10;
+      color: #f0f0f0;
+      font-size: 16px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="number"]:focus {
+      background: #ffffff20;
+      box-shadow: 0 0 5px gold;
+    }
+
+    .full {
+      grid-column: span 2;
+      text-align: center;
+    }
+
+    button {
+      padding: 12px 30px;
+      background: #000;
+      color: gold;
+      border: none;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background: #111;
+      box-shadow: 0 0 10px gold;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Please enter the following values:</h2>
+    <form action="result" method="GET">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="income">Avg. Area Income</label>
+        <input type="number" name="income" step="any" />
+      </div>
+
+      <div class="form-group">
+        <label for="house_age">Avg. Area House Age</label>
+        <input type="number" name="house_age" step="any" />
+      </div>
+
+      <div class="form-group">
+        <label for="rooms">Avg. Area Number of Rooms</label>
+        <input type="number" name="rooms" step="any" />
+      </div>
+
+      <div class="form-group">
+        <label for="bedrooms">Avg. Area Number of Bedrooms</label>
+        <input type="number" name="bedrooms" step="any" />
+      </div>
+
+      <div class="form-group full">
+        <label for="population">Avg. Area Population</label>
+        <input type="number" name="population" step="any" />
+      </div>
+
+      <div class="form-group full">
+        <button type="submit">PREDICT</button>
+      </div>
+    </form>
+    <div class="row">
+        <h2>{{result2}}</h2>
+    </div>
+  </div>
+</body>
+</html>
